@@ -75,15 +75,18 @@ library(fivethirtyeight)
 ```{r}
 candy_df <- candy_rankings
 glimpse(candy_df)
+ncol(candy_df)
 ```
 
 
 ## Exercise 1
 
 How many observations and variables are in this dataset?
-Did you identify the type of variables, remember that this detail is crucial to create which kind of data visualization in general. 
+Did you identify the type of variables, remember that this detail is crucial to create which kind of data visualization in general.
 
-_Write your comments about results_
+There are 85 observations and 13 variables.
+
+__
 
 # Data viz - One variable at a time
 
@@ -92,6 +95,7 @@ Just to use the logical variables as categories, run the following code chunk fi
 ```{r}
 candy_df <- candy_df %>%
   mutate(across(where(is.logical), as_factor))
+candy_df
 ```
 
 ## Exercise 2

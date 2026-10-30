@@ -413,12 +413,15 @@ glimpse(candy_df)</code></pre>
 ## $ sugarpercent     &lt;dbl&gt; 0.732, 0.604, 0.011, 0.011, 0.906, 0.465, 0.604, 0.31…
 ## $ pricepercent     &lt;dbl&gt; 0.860, 0.511, 0.116, 0.511, 0.511, 0.767, 0.767, 0.51…
 ## $ winpercent       &lt;dbl&gt; 66.97173, 67.60294, 32.26109, 46.11650, 52.34146, 50.…</code></pre>
+<pre class="r"><code>ncol(candy_df)</code></pre>
+<pre><code>## [1] 13</code></pre>
 <div id="exercise-1" class="section level2">
 <h2>Exercise 1</h2>
 <p>How many observations and variables are in this dataset? Did you
 identify the type of variables, remember that this detail is crucial to
 create which kind of data visualization in general.</p>
-<p><em>Write your comments about results</em></p>
+<p>There are 85 observations and 13 variables.</p>
+<p>__</p>
 </div>
 </div>
 <div id="data-viz---one-variable-at-a-time" class="section level1">
@@ -426,7 +429,24 @@ create which kind of data visualization in general.</p>
 <p>Just to use the logical variables as categories, run the following
 code chunk first!</p>
 <pre class="r"><code>candy_df &lt;- candy_df %&gt;%
-  mutate(across(where(is.logical), as_factor))</code></pre>
+  mutate(across(where(is.logical), as_factor))
+candy_df</code></pre>
+<pre><code>## # A tibble: 85 × 13
+##    competitorname     chocolate fruity caramel peanutyalmondy nougat
+##    &lt;chr&gt;              &lt;fct&gt;     &lt;fct&gt;  &lt;fct&gt;   &lt;fct&gt;          &lt;fct&gt; 
+##  1 100 Grand          TRUE      FALSE  TRUE    FALSE          FALSE 
+##  2 3 Musketeers       TRUE      FALSE  FALSE   FALSE          TRUE  
+##  3 One dime           FALSE     FALSE  FALSE   FALSE          FALSE 
+##  4 One quarter        FALSE     FALSE  FALSE   FALSE          FALSE 
+##  5 Air Heads          FALSE     TRUE   FALSE   FALSE          FALSE 
+##  6 Almond Joy         TRUE      FALSE  FALSE   TRUE           FALSE 
+##  7 Baby Ruth          TRUE      FALSE  TRUE    TRUE           TRUE  
+##  8 Boston Baked Beans FALSE     FALSE  FALSE   TRUE           FALSE 
+##  9 Candy Corn         FALSE     FALSE  FALSE   FALSE          FALSE 
+## 10 Caramel Apple Pops FALSE     TRUE   TRUE    FALSE          FALSE 
+## # ℹ 75 more rows
+## # ℹ 7 more variables: crispedricewafer &lt;fct&gt;, hard &lt;fct&gt;, bar &lt;fct&gt;,
+## #   pluribus &lt;fct&gt;, sugarpercent &lt;dbl&gt;, pricepercent &lt;dbl&gt;, winpercent &lt;dbl&gt;</code></pre>
 <div id="exercise-2" class="section level2">
 <h2>Exercise 2</h2>
 <p>Complete the following code to get the data viz to represent “how
