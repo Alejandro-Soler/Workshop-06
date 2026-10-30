@@ -186,7 +186,9 @@ Are chocolate candies more likely to be candy bars? Make a filled bar plot with 
 
 ```{r}
 # Your code here
-
+ggplot(candy_df, aes(x = chocolate)) +
+  labs(title = "Likelihood of chocolate ending up as candy bars", ) +
+  geom_bar(aes(fill = bar))
 ```
 
 
